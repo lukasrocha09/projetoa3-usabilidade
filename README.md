@@ -6,3 +6,4 @@ GRUPO:
 - Julia Campani
 - Luiz Garcia
 - Vinicius Paiutti
+- Enzo S. Araujo
