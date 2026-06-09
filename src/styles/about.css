@@ -1,0 +1,82 @@
+.about-simple {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.about-simple h1 {
+  margin: 0 0 12px;
+  font-size: 2.4rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.about-simple > p {
+  margin: 0 0 28px;
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 850px;
+  text-align: left;
+}
+
+.about-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.about-simple-grid section,
+.about-note {
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.about-simple h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.about-simple p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-simple ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.about-simple li {
+  color: #cbd5e1;
+  line-height: 1.7;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.about-note {
+  margin-top: 18px;
+}
+
+.members-list {
+  list-style-position: outside;
+  padding-left: 22px;
+}
+
+.members-list li {
+  display: list-item;
+  margin-bottom: 6px;
+}

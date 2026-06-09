@@ -9,53 +9,42 @@
 # Catálogo de Jogos Free-to-Play 🎮
 
 ## Sobre o Projeto
-Este é um projeto acadêmico focado no desenvolvimento de uma interface web para listagem e descoberta de jogos gratuitos. O objetivo principal é construir uma aplicação rápida e responsiva, aplicando os conceitos fundamentais de desenvolvimento frontend em React integrados a boas práticas de experiência do usuário (UX).
+Este é um projeto acadêmico focado no desenvolvimento de uma interface web para listagem e descoberta de jogos gratuitos. A aplicação consome dados reais da FreeToGame API, exibe os jogos em formato de catálogo, permite busca por nome, filtros por gênero e plataforma, além de possuir uma tela de detalhes para cada jogo. O objetivo principal é construir uma aplicação rápida e responsiva, aplicando os conceitos fundamentais de desenvolvimento frontend em React integrados a boas práticas de experiência do usuário (UX).
+
+## 🎯 Problema e Público-Alvo
+**O Problema:** Jogadores que buscam opções de entretenimento sem custo financeiro (Free-to-Play) frequentemente perdem tempo garimpando títulos de qualidade em plataformas fragmentadas, lidando com interfaces poluídas e sem filtros adequados.
+
+**Público-Alvo:** Gamers com orçamento limitado, jogadores casuais em busca de novos títulos e usuários que dependem de navegação acessível por teclado e leitores de tela. A aplicação centraliza e facilita essa descoberta.
 
 ## 🛠️ Tecnologias e Ferramentas Utilizadas
-* **React:** Biblioteca principal para construção da interface.
-* **Vite:** Ferramenta de build e servidor de desenvolvimento local.
-* **ESLint:** Ferramenta de análise estática nativa do Vite para garantir a qualidade do código.
-* **FreeToGame API:** Fonte de dados externa.
+* **React & Vite:** Construção da interface no formato SPA (Single Page Application) com servidor de desenvolvimento ultra-rápido.
+* **React Router DOM:** Gerenciamento das rotas (`/`, `/jogo/:id`).
+* **CSS Puro:** Estilização componentizada com uso de CSS Grid, Flexbox e variáveis (`global.css`, `home.css`).
+* **FreeToGame API:** Fonte de dados consumida dinamicamente via `fetch`. Durante o desenvolvimento, o Vite atua como proxy para evitar bloqueios de CORS.
 
 ## 🚀 Como Executar o Projeto Localmente
-Para rodar esta aplicação na sua máquina, certifique-se de ter o **Node.js** instalado.
+Certifique-se de ter o **Node.js** instalado na sua máquina.
 
-1. **Clone o repositório:**
-   `git clone https://github.com/lukasrocha09/projetoa3-usabilidade.git`
-2. **Acesse a pasta do projeto:**
-   `cd projetoa3-usabilidade`
-3. **Instale as dependências:**
-   `npm install`
-4. **Inicie o servidor de desenvolvimento:**
-   `npm run dev`
-5. **Acesse no navegador:**
-   Abra a URL exibida no terminal, normalmente: `http://localhost:5173`
+1. **Clone o repositório:** `git clone https://github.com/lukasrocha09/projetoa3-usabilidade.git`
+2. **Acesse a pasta:** `cd projetoa3-usabilidade`
+3. **Instale as dependências:** `npm install`
+4. **Inicie o servidor local:** `npm run dev`
+5. **Acesse no navegador:** `http://localhost:5173`
 
-## Arquitetura e Fonte de Dados
-A aplicação é alimentada de forma dinâmica consumindo a [FreeToGame API](https://www.freetogame.com/api_doc). 
-* **Endpoint Principal:** As requisições são feitas para a rota `/api/games`, que nos fornece um catálogo robusto de títulos contendo nome, plataforma, imagens e gênero.
-* **Consumo e Proxy:** O frontend faz requisições diretas para `/api/games`. Durante o desenvolvimento local, o **Vite intercepta essa rota e atua como proxy**, encaminhando a requisição para a FreeToGame API (evitando bloqueios de CORS no navegador).
-* **Autenticação:** A API utilizada é pública. No estado atual do projeto, **não há necessidade de uso de chaves de API (API Keys)** ou credenciais.
+## 🧠 Aplicação das Heurísticas de Nielsen
+A interface foi projetada com base nos princípios de usabilidade de Jakob Nielsen. Exemplos práticos aplicados no código:
 
-## Escopo e Fluxo de Navegação
-O projeto foi estruturado com foco em uma navegação simples e direta, no formato Single Page Application (SPA).
-O fluxo do usuário baseia-se em:
-1. **Acesso inicial:** O usuário entra na aplicação e visualiza imediatamente um feedback de carregamento (comunicando que o sistema está buscando os dados).
-2. **Descoberta:** Os dados da API são renderizados em uma tela principal limpa, exibindo os jogos em um formato de grade (cards) de fácil leitura.
+1. **Visibilidade do Status do Sistema:** Uso de `status-box loading` durante as requisições `fetch` e contadores dinâmicos indicando "Exibindo: X jogos".
+2. **Correspondência entre o Sistema e o Mundo Real:** Uso do conceito familiar de "Vitrine", filtros com terminologia gamer e conversão da descrição em inglês para um resumo contextualizado em português.
+3. **Prevenção de Erros:** Os `selects` de filtros impedem que o usuário digite parâmetros inválidos.
+4. **Reconhecer, Diagnosticar e Recuperar-se de Erros:** Implementação de uma interface amigável (`status-box error`) caso a API da FreeToGame fique fora do ar, oferecendo um botão claro para "Voltar ao catálogo".
+5. **Estética e Design Minimalista:** Remoção de informações redundantes (como contadores duplicados ou descrições em dois idiomas) para focar apenas nas informações vitais de decisão do usuário.
 
-## Diretrizes de Usabilidade e Acessibilidade
-Para garantir que a aplicação seja intuitiva e acessível para o maior número de pessoas possível, o desenvolvimento segue as seguintes diretrizes:
+## ♿ Acessibilidade e Critérios WCAG
+Para garantir um uso inclusivo, o código segue as diretrizes de acessibilidade:
 
-* **Foco no Usuário (Heurísticas):**
-  * Manter o usuário sempre informado sobre o que está acontecendo, com indicadores visuais durante o consumo da API.
-  * Utilizar o conceito de "vitrine" ou "catálogo", que é familiar no mundo real.
-  * Padronização rigorosa no layout dos cards para manter a consistência visual.
-  * Tratamento de falhas no código para que, em caso de erro na API, a tela não quebre bruscamente.
-  * Interface minimalista, destacando apenas as informações essenciais dos jogos.
-
-* **Acessibilidade Inclusiva (WCAG):**
-  * Todas as capas de jogos (`thumbnails`) conterão textos alternativos (`alt`) descritivos para leitores de tela.
-  * A paleta de cores será escolhida respeitando níveis adequados de contraste entre texto e fundo.
-  * A estrutura HTML será desenvolvida permitindo a navegação completa pelas opções usando a tecla `Tab`.
-  * Utilização de tags semânticas hierárquicas (`<h1>`, `<h2>`, etc.) para estruturar a informação.
-  * O layout será totalmente responsivo, garantindo que o texto e os cards não quebrem caso o usuário utilize zoom no navegador.
+* **Navegação por Teclado:** Implementação rigorosa do estado `:focus` e `:focus-within` no CSS com `outline: 3px solid var(--focus)`, permitindo navegação total via tecla `Tab`.
+* **Semântica HTML:** Estruturação correta usando tags como `<main>`, `<section>`, `<article>`, além do uso de atributos `aria-label` e `aria-labelledby` para identificar seções para leitores de tela.
+* **Formulários Acessíveis:** Todos os inputs e selects de filtros possuem tags `<label>` com o atributo `htmlFor` corretamente linkado aos `ids` dos campos.
+* **Textos Alternativos:** A tag `<img>` de todos os cards recebe o atributo dinâmico `alt={"Capa do jogo " + jogo.title}`, auxiliando deficientes visuais.
+* **Contraste de Cores:** Ajuste no peso das tipografias e garantia de contraste adequado (texto claro sobre fundos escuros e degradês suaves).

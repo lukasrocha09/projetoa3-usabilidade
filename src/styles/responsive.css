@@ -1,0 +1,95 @@
+/* RESPONSIVO */
+@media (max-width: 860px) {
+  .details-card,
+  .detalhes-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .container,
+  .page-container {
+    padding: 26px 16px 50px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .games-grid,
+  .lista-jogos,
+  .grid-jogos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Evita cara de "bloco gigante" em telas grandes */
+@media (min-width: 1000px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .search-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 28px 22px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 28px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .details-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-simple-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-simple {
+    padding: 22px;
+  }
+}
