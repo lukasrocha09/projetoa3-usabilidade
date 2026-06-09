@@ -16,7 +16,8 @@
   margin: 0 0 10px;
   font-size: clamp(2.4rem, 5vw, 4.4rem);
   line-height: 1;
-  font-weight: 900;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .hero p {

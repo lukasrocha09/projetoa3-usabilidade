@@ -137,12 +137,7 @@ function Detalhes() {
               </Link>
             </div>
 
-            {jogo.description && (
-              <details className="original-description">
-                <summary>Ver descrição original da API</summary>
-                <p>{jogo.description}</p>
-              </details>
-            )}
+            
           </div>
         </article>
       </section>

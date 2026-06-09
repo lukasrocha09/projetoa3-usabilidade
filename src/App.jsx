@@ -11,7 +11,7 @@ function App() {
         <div className="site-header-content">
           <Link to="/" className="brand" aria-label="Ir para o catálogo de jogos">
             <span className="brand-icon" aria-hidden="true">🎮</span>
-            <span>GameVault</span>
+            <span>Home</span>
           </Link>
 
           <nav className="nav-menu" aria-label="Navegação principal">

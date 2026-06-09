@@ -5,7 +5,7 @@ function Sobre() {
         <h1>Sobre o Projeto</h1>
 
         <p>
-          O GameVault é um catálogo de jogos gratuitos desenvolvido em React.
+          O GamesAC é um catálogo de jogos gratuitos desenvolvido em React.
           A aplicação consome dados reais da FreeToGame API e permite consultar
           jogos, aplicar filtros e visualizar informações detalhadas de cada título.
         </p>

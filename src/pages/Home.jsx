@@ -80,7 +80,6 @@ function Home() {
     <main className="page-container">
       <section className="hero">
         <div className="hero-content">
-          <span className="eyebrow">Catálogo gamer acessível</span>
 
           <h1>Encontre seu próximo jogo</h1>
 
@@ -90,9 +89,6 @@ function Home() {
           </p>
 
           <div className="hero-actions">
-            <span className="counter">
-              🎮 Total na API: {jogos.length}
-            </span>
 
             <span className="counter secondary-counter">
               🔎 Exibindo: {jogosFiltrados.length}
